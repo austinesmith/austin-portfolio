@@ -19,7 +19,7 @@ export class CloudInfrastructureStack extends cdk.Stack {
 
     // create bucket deployment resource
     const portfolioDeployment = new s3Deployment.BucketDeployment(this, "deployStaticWebsite", {
-      sources: [s3Deployment.Source.asset("../front-end/dist")],
+      sources: [s3Deployment.Source.asset("../front-end/build")],
       destinationBucket: portfolioBucket
    });
 
