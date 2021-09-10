@@ -8,6 +8,8 @@ jobs:
       - uses: actions/setup-node@v1
       - name: Install Yarn Package Manager
         run: npm install -g yarn
+      - name: Install Project Dependencies
+        run: yarn
       - name: Build React Front End Application
         run: cd packages/front-end && yarn build
       - name: Configure AWS Credentials
