@@ -7,9 +7,9 @@ jobs:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v1
     - name: Install Yarn Package Manager
-    - run: npm install -g yarn
+      run: npm install -g yarn
     - name: Build React Front End Application
-    - run: yarn --cwd \"./packages/front-end\" build \
+      run: yarn --cwd \"./packages/front-end\" build \
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
@@ -17,7 +17,7 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: us-east-1
     - name: (Update) Bootstrap AWS Environment
-    - run: yarn --cwd \"./packages/cloud-infrastructure\" cdk bootstrap
+      run: yarn --cwd \"./packages/cloud-infrastructure\" cdk bootstrap
     - name: Invalidate CloudFront Cache 1
       uses: chetan/invalidate-cloudfront-action@master
       env:
@@ -35,8 +35,8 @@ jobs:
         AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     - name: Output AWS CloudFormation Template
-    - run: yarn --cwd \"./packages/cloud-infrastructure\" cdk synth
+      run: yarn --cwd \"./packages/cloud-infrastructure\" cdk synth
     - name: Output Difference From Last Deploy
-    - run: yarn --cwd \"./packages/cloud-infrastructure\" cdk diff
+      run: yarn --cwd \"./packages/cloud-infrastructure\" cdk diff
     - name: Deploy AWS Resources
-    - run: yarn --cwd \"./packages/cloud-infrastructure\" cdk deploy --progress=bar --require-approval never
+      run: yarn --cwd \"./packages/cloud-infrastructure\" cdk deploy --progress=bar --require-approval never
