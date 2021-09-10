@@ -4,29 +4,29 @@ jobs:
   deploy-to-prod:
     runs-on: ubuntu-latest
     steps:
-      - name: Action for Checking Out a Repo
+      - name: Checking Out the Repository
         uses: actions/checkout@v2
-      - name: Action for Setting Up Node.js
+      - name: Setting Up Node.js
         uses: actions/setup-node@v1
-      - name: Install Yarn Package Manager
+      - name: Installing Yarn Package Manager
         run: npm install -g yarn
-      - name: Install AWS CDK globally
+      - name: Installing AWS CDK globally
         run: yarn global add aws-cdk
-      - name: Install Project Dependencies
+      - name: Installing Project Dependencies
         run: yarn
-      - name: Build React Front End Application
+      - name: Building React Front End Application
         run: cd packages/front-end && yarn build
-      - name: Configure AWS Credentials
+      - name: Configuring AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
-      - name: (Update) Bootstrap AWS Environment
+      - name: Bootstrapping AWS Environment
         run: cd packages/cloud-infrastructure && cdk bootstrap
-      - name: Output AWS CloudFormation Template
+      - name: Generating CloudFormation Template of AWS Resources
         run: cd packages/cloud-infrastructure && cdk synth
-      - name: Output Difference From Last Deploy
-        run: yarn --cwd \"./packages/cloud-infrastructure\" cdk diff
-      - name: Deploy AWS Resources
-        run: yarn --cwd \"./packages/cloud-infrastructure\" cdk deploy --progress=bar --require-approval never
+      - name: Getting Difference From Last Deployment
+        run: cd packages/cloud-infrastructure && cdk diff
+      - name: Deploying AWS Resources to the Cloud
+        run: cd packages/cloud-infrastructure && cdk deploy --progress=bar --require-approval never
