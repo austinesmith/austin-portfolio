@@ -13,7 +13,7 @@ jobs:
       - name: Install Project Dependencies
         run: yarn
       - name: Build React Front End Application
-        run: yarn --cwd \"./packages/cloud-infrastructure\" build
+        run: cd packages/front-end && yarn build
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
