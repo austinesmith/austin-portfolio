@@ -36,13 +36,13 @@ export class CloudInfrastructureStack extends cdk.Stack {
   });
 
   // output website URL to stdout
-  new CfnOutput(this, "URL", {
+  new CfnOutput(this, "S3URL", {
     description: "S3 URL:",
     value: portfolioBucket.bucketWebsiteUrl
   });
 
  // output website edge caching URL to stdout
-  new CfnOutput(this, "URL", {
+  new CfnOutput(this, "CFURL", {
     description: "CloudFront URL:",
     value: portfolioDistribution.distributionDomainName
   });
