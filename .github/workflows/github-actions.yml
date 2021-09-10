@@ -1,7 +1,5 @@
 name: github-actions
 on: [push]
-  branches:
-    - master
 jobs:
   install-build:
    runs-on: ubuntu-latest
