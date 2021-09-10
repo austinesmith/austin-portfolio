@@ -1,7 +1,7 @@
 name: github-actions
 on: [push]
 jobs:
-  install-build:
+  deploy-to-prod:
     runs-on: ubuntu-latest
     steps:
       - name: Action for Checking Out a Repo
@@ -13,7 +13,7 @@ jobs:
       - name: Install Project Dependencies
         run: yarn
       - name: Build React Front End Application
-        run: yarn --cwd \"./packages/cloud-infrastructure\" cdk bootstrap
+        run: yarn --cwd \"./packages/cloud-infrastructure\" build
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
