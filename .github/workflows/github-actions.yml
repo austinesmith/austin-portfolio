@@ -10,6 +10,8 @@ jobs:
         uses: actions/setup-node@v1
       - name: Install Yarn Package Manager
         run: npm install -g yarn
+      - name: Install AWS CDK globally
+        run: yarn install -g @aws-cdk
       - name: Install Project Dependencies
         run: yarn
       - name: Build React Front End Application
