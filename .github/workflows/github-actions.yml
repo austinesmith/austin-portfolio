@@ -4,14 +4,16 @@ jobs:
   install-build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - name: Action for Checking Out a Repo
+        uses: actions/checkout@v2
+      - name: Action for Setting Up Node.js
+        uses: actions/setup-node@v1
       - name: Install Yarn Package Manager
         run: npm install -g yarn
       - name: Install Project Dependencies
         run: yarn
       - name: Build React Front End Application
-        run: cd packages/front-end && yarn build
+        run: yarn --cwd \"./packages/cloud-infrastructure\" cdk bootstrap
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
@@ -20,22 +22,6 @@ jobs:
           aws-region: us-east-1
       - name: (Update) Bootstrap AWS Environment
         run: yarn --cwd \"./packages/cloud-infrastructure\" cdk bootstrap
-      - name: Invalidate CloudFront Cache 1
-        uses: chetan/invalidate-cloudfront-action@master
-        env:
-          DISTRIBUTION: ${{ secrets.DISTRIBUTION_ONE }}
-          PATHS: '/index.html'
-          AWS_REGION: 'us-east-1'
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-      - name: Invalidate CloudFront Cache 2
-        uses: chetan/invalidate-cloudfront-action@master
-        env:
-          DISTRIBUTION: ${{ secrets.DISTRIBUTION_TWO }}
-          PATHS: '/index.html'
-          AWS_REGION: 'us-east-1'
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       - name: Output AWS CloudFormation Template
         run: yarn --cwd \"./packages/cloud-infrastructure\" cdk synth
       - name: Output Difference From Last Deploy
