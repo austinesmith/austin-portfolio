@@ -11,7 +11,7 @@ jobs:
       - name: Install Yarn Package Manager
         run: npm install -g yarn
       - name: Install AWS CDK globally
-        run: yarn install -g @aws-cdk
+        run: yarn global add @aws-cdk
       - name: Install Project Dependencies
         run: yarn
       - name: Build React Front End Application
