@@ -21,19 +21,19 @@ jobs:
     - name: Invalidate CloudFront Cache 1
       uses: chetan/invalidate-cloudfront-action@master
       env:
-       DISTRIBUTION: ${{ secrets.DISTRIBUTION_ONE }}
-       PATHS: '/index.html'
-       AWS_REGION: 'us-east-1'
-       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        DISTRIBUTION: ${{ secrets.DISTRIBUTION_ONE }}
+        PATHS: '/index.html'
+        AWS_REGION: 'us-east-1'
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     - name: Invalidate CloudFront Cache 2
       uses: chetan/invalidate-cloudfront-action@master
       env:
-       DISTRIBUTION: ${{ secrets.DISTRIBUTION_TWO }}
-       PATHS: '/index.html'
-       AWS_REGION: 'us-east-1'
-       AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-       AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        DISTRIBUTION: ${{ secrets.DISTRIBUTION_TWO }}
+        PATHS: '/index.html'
+        AWS_REGION: 'us-east-1'
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     - name: Output AWS CloudFormation Template
     - run: yarn --cwd \"./packages/cloud-infrastructure\" cdk synth
     - name: Output Difference From Last Deploy
