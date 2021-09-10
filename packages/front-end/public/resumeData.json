@@ -1,0 +1,167 @@
+{
+  "main": {
+    "name": "Austin Smith",
+    "occupation": "Software Developer",
+    "description": "Bringing ideas to life is how I ultimately get my satisfaction.  How convenient it is, that computers happen to be instruments of limitless creative potential.  How fortunate I am, to be someone that loves my profession",
+    "image": "profilepic.jpg",
+    "bio": "Welcome to the portfolio of Austin Smith.  I view development as my creative outlet and am fascinated by its rapid evolution.  My skills revolve heavily around world wide web applications.  My favorite technologies to research are automation and cloud architecture.  The computer might as well been invented to solve problems that didn't exist before it!",
+    "contactmessage": "Feel free to shoot me a message",
+    "email": "austin@papiocloud.com",
+    "phone": "402-917-3449 The invention of language allowed primitive",
+    "address": {
+      "street": "6214 N 153rd St",
+      "city": "Omaha",
+      "state": "NE",
+      "zip": "68116"
+    },
+    "website": "http://www.austinesmith.com",
+    "resumedownload": "resume-august-2021_austin-smith.pdf",
+    "social": [
+      {
+        "name": "linkedin",
+        "url": "https://www.linkedin.com/in/austinfosec/",
+        "className": "fa fa-linkedin"
+      },
+      {
+        "name": "github",
+        "url": "https://github.com/austinesmith",
+        "className": "fa fa-github"
+      }
+    ]
+  },
+  "resume": {
+    "skillmessage": "The following is a list of my primary skills",
+    "education": [
+      {
+        "school": "University of Nebraska Omaha",
+        "degree": "Bachelor's of Science in Cybersecurity",
+        "graduated": "December 2018",
+        "description": "During my time at UNO I was on the Dean's List and won the Union Pacific Cybersecurity Scholarship.  Their Cybersecurity program is accredited by the NSA and DHS.  My education pushed me to understand the entire anatomy of systems and improvise."
+      }
+    ],
+    "certification": [
+      {
+        "cert": "",
+        "issuer": "",
+        "issued": "",
+        "expires": ""
+      }
+    ],
+    "work": [
+      {
+        "company": "Papio Cloud Software",
+        "title": "Cloud Engineer",
+        "years": "January 2021 - Present",
+        "description": "Creation of web applications and software-as-a-service with a focus on automation and cloud architecture."
+      },
+      {
+        "company": "Econosoft",
+        "title": "Java Web Developer",
+        "years": "May 2016 - August 2016",
+        "description": "Creation of browser based dashboards to dynamically structure patient information in meaningful ways."
+      },
+      {
+        "company": "Raytheon",
+        "title": "Java Software Developer",
+        "years": "July 2014 - January 2016",
+        "description": "Creation of meteorological tools and displays used by the National Tsunami Warning Center."
+      },
+      {
+        "company": "First Data",
+        "title": "Application Developer",
+        "years": "August 2013 - July 2014",
+        "description": "Creation of administrative systems that enabled cardholder's to manage their accounts over the internet"
+      }
+    ],
+    "skills": [
+      {
+        "name": "Java",
+        "level": "95%"
+      },
+      {
+        "name": "Typescript",
+        "level": "80%"
+      },
+      {
+        "name": "JavaScript",
+        "level": "80%"
+      },
+      {
+        "name": "React",
+        "level": "90%"
+      },
+      {
+        "name": "Vue",
+        "level": "70%"
+      },
+      {
+        "name": "AWS",
+        "level": "75%"
+      },
+      {
+        "name": "CSS",
+        "level": "65%"
+      },
+      {
+        "name": "HTML",
+        "level": "100%"
+      },
+      {
+        "name": "Automation",
+        "level": "65%"
+      },
+      {
+        "name": "Git",
+        "level": "90%"
+      }
+    ]
+  },
+  "portfolio": {
+    "projects": [
+      {
+        "title": "API Transform",
+        "category": "A script that fetches, transforms, then posts data elsewhere.  It was written in Typescript with the Axios HTTP client.  Unstructured fields are formatted to fit the new object and a package is pulled in to resolve zip codes to states.",
+        "image": "ts_nodejs.png",
+        "url": "https://github.com/austinesmith/api-transform"
+      },
+      {
+        "title": "Papio Cloud Website",
+        "category": "A full website prototype written in React-Typescript for Papio Cloud.  It features an animated banner, nav bar elevating on scroll, nav bar collapses to nav drawer on small width, and dynamic sizing to fit different viewports.",
+        "image": "papio.jpg",
+        "url": "http://papiocloud-prototype.s3-website-us-east-1.amazonaws.com/"
+      },
+      {
+        "title": "React Typescript Portfolio",
+        "category": "A portfolio website written in React-Typescript with a Material Design Framework that features a dark mode toggle.  It also uses CDK to automatically deploy to AWS.",
+        "image": "react_portfolio.png",
+        "url": "https://d27d8afdb2lg6v.cloudfront.net/"
+      },
+      {
+        "title": "Vue Typescript Portfolio",
+        "category": "A portfolio website written in Vue-Typescript with Vuetify that features an email form with input checking and expandable images.  It also uses CDK to automatically deploy to AWS.",
+        "image": "vue_portfolio.jpg",
+        "url": "https://austinesmith.com/"
+      },
+      {
+        "title": "CRUD API With Serverless Architecture",
+        "category": "Creates a REST API with with API Gateway that handles Create, Read, Update, and Delete functions.  Static front end with calls to API Gateway to trigger lambda functions that edit a NoSQL DynamoDB table make it fully serverless.",
+        "image": "crud.jpg",
+        "url": "https://d1yuvz3b02ioxr.cloudfront.net/"
+      },
+      {
+        "title": "Artifact Marketplace",
+        "category": " This project uses Java EE to create a simple one-page marketplace that allows users to make sale listings to a database. It accomplished by deploying a *.WAR servlet to an Apache Tomcat webserver. The servlets use JDBC to connect to a MySQL database and persist data.",
+        "image": "artifact.jpg",
+        "url": "https://github.com/austinesmith/artifactmarketplace"
+      }
+    ]
+  },
+  "testimonials": {
+    "testimonials": [
+      {
+        "text": "Success is no accident. It is hard work, perseverance, learning, studying, sacrifice and most of all, love of what you are doing or learning to do.",
+        "user": "Pele"
+      }
+    ]
+  }
+}
