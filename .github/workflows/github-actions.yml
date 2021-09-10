@@ -21,9 +21,9 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-1
       - name: (Update) Bootstrap AWS Environment
-        run: yarn --cwd \"./packages/cloud-infrastructure\" cdk bootstrap
+        run: cd packages/cloud-infrastructure && cdk bootstrap
       - name: Output AWS CloudFormation Template
-        run: yarn --cwd \"./packages/cloud-infrastructure\" cdk synth
+        run: cd packages/cloud-infrastructure && cdk synth
       - name: Output Difference From Last Deploy
         run: yarn --cwd \"./packages/cloud-infrastructure\" cdk diff
       - name: Deploy AWS Resources
