@@ -9,7 +9,7 @@ jobs:
       - name: Install Yarn Package Manager
         run: npm install -g yarn
       - name: Build React Front End Application
-        run: yarn --cwd \"./packages/front-end\" "yarn build" \
+        run: yarn --cwd \"./packages/front-end\" build
       - name: Configure AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
