@@ -1,0 +1,12 @@
+{
+    "name": "austin-developer-portfolio",
+    "version": "1.0.0",
+    "private": true,
+    "workspaces": [
+        "packages/*"
+    ],
+    "scripts": {
+        "build-deploy": "yarn --cwd \"./packages/front-end\" build && yarn --cwd \"./packages/aws-cdk\" cdk bootstrap && yarn --cwd \"./packages/aws\" cdk deploy --progress=bar --require-approval never",
+        "serve": "yarn --cwd \"./packages/frontend\" serve"
+    }
+}
