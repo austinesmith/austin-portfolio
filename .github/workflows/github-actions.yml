@@ -16,6 +16,8 @@ jobs:
         run: yarn
       - name: Building React Front End Application
         run: cd packages/front-end && yarn build
+        env:
+          CI: false
       - name: Configuring AWS Credentials
         uses: aws-actions/configure-aws-credentials@v1
         with:
