@@ -7,12 +7,9 @@ jobs:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v1
     - name: Install Yarn Package Manager
-    - run: |
-      npm install -g yarn \
-      yarn \
+    - run: npm install -g yarn
     - name: Build React Front End Application
-    - run: |
-      yarn --cwd \"./packages/front-end\" build \
+    - run: yarn --cwd \"./packages/front-end\" build \
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
